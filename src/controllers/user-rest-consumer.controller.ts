@@ -57,6 +57,7 @@ export class UserRestConsumerController {
     },
   })
   async find(@param.filter(UserNew) filter?: Filter<UserNew>) {
+    console.log('asdf');
     return this.userNewProxy.find(filter);
   }
 
