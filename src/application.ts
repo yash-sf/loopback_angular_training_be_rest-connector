@@ -9,6 +9,7 @@ import {
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {LoggingComponent} from './components/winston-logger.component';
+import {createToken} from './middlewares/create-token.middleware';
 import {AppSequence} from './sequence';
 
 export {ApplicationConfig};
@@ -18,6 +19,8 @@ export class RestOpenApiConnectorApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    this.middleware(createToken);
 
     // Set up the custom sequence
     this.component(LoggingComponent);

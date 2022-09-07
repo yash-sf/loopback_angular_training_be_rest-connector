@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 import {
   ApplicationConfig,
   RestOpenApiConnectorApplication,

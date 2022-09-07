@@ -55,6 +55,10 @@
     "@loopback/rest": "^12.0.2",
     "@loopback/rest-explorer": "^5.0.2",
     "@loopback/service-proxy": "^5.0.2",
+    "@types/jsonwebtoken": "^8.5.9",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.2",
+    "jsonwebtoken": "^8.5.1",
     "loopback-connector-rest": "^3.7.0",
     "tslib": "^2.0.0",
     "winston": "^3.8.1"

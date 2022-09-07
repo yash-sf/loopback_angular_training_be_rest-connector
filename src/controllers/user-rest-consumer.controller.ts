@@ -8,8 +8,10 @@ import {
   param,
   post,
   put,
+  Request,
   requestBody,
   response,
+  RestBindings,
 } from '@loopback/rest';
 import {UserNew} from '../models';
 import {UserNewProxy} from '../proxies/user-new.proxy';
@@ -20,6 +22,7 @@ export class UserRestConsumerController {
   constructor(
     @inject(UserProxyKey)
     public userNewProxy: UserNewProxy,
+    @inject(RestBindings.Http.REQUEST) private request: Request,
   ) {}
 
   @post('/user-consumer')
@@ -57,6 +60,7 @@ export class UserRestConsumerController {
     },
   })
   async find(@param.filter(UserNew) filter?: Filter<UserNew>) {
+    console.log(this.request.headers);
     return this.userNewProxy.find(filter);
   }
 
